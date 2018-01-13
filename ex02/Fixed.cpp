@@ -6,7 +6,7 @@
 /*   By: aezzeddi <aezzeddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 20:04:29 by aezzeddi          #+#    #+#             */
-/*   Updated: 2018/01/10 23:47:26 by aezzeddi         ###   ########.fr       */
+/*   Updated: 2018/01/12 20:49:19 by aezzeddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,12 +155,22 @@ int Fixed::toInt(void) const
 	return this->value / (1 << this->nbits);
 }
 
-Fixed Fixed::min(Fixed const& obj1, Fixed const& obj2)
+Fixed const Fixed::min(Fixed const& obj1, Fixed const& obj2)
 {
 	return obj1.getRawBits() < obj2.getRawBits() ? obj1 : obj2;
 }
 
-Fixed Fixed::max(Fixed const& obj1, Fixed const& obj2)
+Fixed const Fixed::max(Fixed const& obj1, Fixed const& obj2)
+{
+	return obj1.getRawBits() > obj2.getRawBits() ? obj1 : obj2;
+}
+
+Fixed Fixed::min(Fixed& obj1, Fixed& obj2)
+{
+	return obj1.getRawBits() < obj2.getRawBits() ? obj1 : obj2;
+}
+
+Fixed Fixed::max(Fixed& obj1, Fixed& obj2)
 {
 	return obj1.getRawBits() > obj2.getRawBits() ? obj1 : obj2;
 }

@@ -6,7 +6,7 @@
 /*   By: aezzeddi <aezzeddi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 20:04:46 by aezzeddi          #+#    #+#             */
-/*   Updated: 2018/01/10 23:23:47 by aezzeddi         ###   ########.fr       */
+/*   Updated: 2018/01/12 20:47:29 by aezzeddi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 
-		static Fixed min(Fixed const& obj1, Fixed const& obj2);
-		static Fixed max(Fixed const& obj1, Fixed const& obj2);
+		static Fixed min(Fixed& obj1, Fixed& obj2);
+		static Fixed max(Fixed& obj1, Fixed& obj2);
+		static Fixed const min(Fixed const& obj1, Fixed const& obj2);
+		static Fixed const max(Fixed const& obj1, Fixed const& obj2);
 	private:
 		int value;
 
